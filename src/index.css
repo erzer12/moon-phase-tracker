@@ -1,0 +1,18 @@
+/* Importing the "Inter" font from Google Fonts for a clean, modern look. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Global styles for the body and root elements. */
+body, #root {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #23272a; /* A dark, calming background color. */
+  color: #dcddde;
+}
+
+/* Basic styling for code snippets within the app. */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

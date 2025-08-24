@@ -1,0 +1,266 @@
+/* Styling for the entire app */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  /* New: Dark, night-sky theme */
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header styling */
+.App-header h1 {
+  font-size: 3rem;
+  font-weight: 700; /* Slightly less bold for a cleaner look */
+  letter-spacing: 3px; /* Increased spacing */
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(173, 216, 230, 0.3); /* Light blue glow */
+}
+
+/* Main content container */
+.App-main {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Common container styling */
+.current-phase-container, .next-seven-days-container, .search-container {
+  /* New: Dark, glassy container style */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.date-label {
+  font-size: 1.1rem;
+  color: #a0a0b0; /* Lighter gray for dark background */
+  margin-bottom: 1rem;
+}
+
+.moon-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.moon-emoji {
+  font-size: 10rem;
+  animation: pulse-glow 3s infinite ease-in-out;
+  /* New: White/silver glow for moonlight */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+  transition: transform 0.5s ease;
+}
+
+.phase-label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-top: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Button styling */
+.seven-day-btn, .search-btn {
+  /* New: Modern, sleek button style for dark theme */
+  background: #4a4e69;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.seven-day-btn:hover, .search-btn:hover {
+  background-color: #6a6e99;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(173, 216, 230, 0.3); /* Add a subtle glow on hover */
+}
+
+.seven-day-btn:active, .search-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Next 7 days grid */
+.next-seven-days-container h2, .search-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.moon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.moon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem;
+  /* New: Darker card background */
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 140px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.moon-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.card-date {
+  font-size: 0.9rem;
+  color: #a0a0b0;
+  margin-bottom: 0.5rem;
+}
+
+.moon-emoji-small {
+  font-size: 4rem;
+  transition: transform 0.3s ease;
+}
+
+.moon-card:hover .moon-emoji-small {
+  transform: scale(1.1);
+}
+
+.card-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d0d0d0;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Search section */
+.search-input-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #e0e0e0;
+  font-size: 1rem;
+  width: 150px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Make the calendar icon white */
+  cursor: pointer;
+}
+
+.moon-display-search {
+  margin-top: 1rem;
+}
+
+.moon-emoji-search {
+  font-size: 8rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+}
+
+.phase-label-search {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4)); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4)); }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .current-phase-container, .next-seven-days-container, .search-container {
+    padding: 1.5rem;
+  }
+
+  .moon-emoji {
+    font-size: 8rem;
+  }
+
+  .phase-label {
+    font-size: 1.5rem;
+  }
+  
+  .search-input-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .date-input, .search-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .seven-day-btn {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .moon-card {
+    width: 45%;
+    min-width: 120px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .moon-emoji {
+    font-size: 6rem;
+  }
+  
+  .moon-emoji-search {
+    font-size: 5rem;
+  }
+
+  .next-seven-days-container h2, .search-container h2 {
+    font-size: 1.5rem;
+  }
+}
